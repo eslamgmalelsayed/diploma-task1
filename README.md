@@ -2,6 +2,10 @@
 
 A modern React component for displaying product cards with interactive features.
 
+## Demo
+
+🚀 [Live Demo](https://diploama-task1.netlify.app/)
+
 ## Features
 
 - 🛍️ Clean and modern product card design
