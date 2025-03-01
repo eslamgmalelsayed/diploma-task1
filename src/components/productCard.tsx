@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Product from "../models/products";
 import Btn from "../ui/btn";
 import Dialog from "./dialog";
@@ -10,9 +10,14 @@ interface ProductCardProps {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [imageLoading, setImageLoading] = useState(true);
 
   const handleAddToCart = () => {
     setIsDialogOpen(true);
+  };
+
+  const handleImageLoad = () => {
+    setImageLoading(false);
   };
 
   const formatPrice = (price: number) => {
@@ -25,12 +30,22 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <>
       <div className="max-w-sm overflow-hidden shadow-lg bg-white p-4 border border-gray-200 rounded-md transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] hover:border-gray-300">
-        <img
-          className="w-full h-64 object-contain"
-          loading="lazy"
-          src={product.thumbnail}
-          alt={product.title}
-        />
+        <div className="relative w-full h-64">
+          {imageLoading && (
+            <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-md" />
+          )}
+          <img
+            className={`w-full h-64 object-contain ${
+              imageLoading
+                ? "opacity-0"
+                : "opacity-100 transition-opacity duration-300"
+            }`}
+            loading="lazy"
+            src={product.thumbnail}
+            alt={product.title}
+            onLoad={handleImageLoad}
+          />
+        </div>
         <div className="px-2 py-4">
           <div className="flex justify-between items-center gap-2">
             <span className="font-bold text-xl truncate flex-1">
