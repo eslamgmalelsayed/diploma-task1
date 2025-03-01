@@ -1,7 +1,6 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import Product from "../models/products";
 import ProductForm from "./productForm";
-import Btn from "../ui/btn";
 
 interface DialogProps {
   isOpen: boolean;
