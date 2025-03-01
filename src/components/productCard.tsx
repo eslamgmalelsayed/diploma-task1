@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Product from "../models/products";
 import Btn from "../ui/btn";
 import Dialog from "./dialog";
