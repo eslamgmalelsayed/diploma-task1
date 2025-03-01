@@ -35,10 +35,10 @@ git clone https://github.com/yourusername/react-product-card.git
 cd react-product-card
 
 # Install dependencies
-npm install
+pnpm install
 
 # Start development server
-npm run dev
+pnpm run dev
 ```
 
 ## Component Usage
@@ -85,13 +85,13 @@ const product = {
 
 ```bash
 # Run development server
-npm run dev
+pnpm run dev
 
 # Build for production
-npm run build
+pnpm run build
 
 # Run tests
-npm test
+pnpm test
 ```
 
 ## Contributing
