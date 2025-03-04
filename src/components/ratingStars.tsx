@@ -1,5 +1,4 @@
-import { StarIcon as StarOutline } from "@heroicons/react/24/outline";
-import { StarIcon as StarSolid } from "@heroicons/react/24/solid";
+import { StarIcon } from "@heroicons/react/24/solid";
 
 interface RatingStarsProps {
   rating: number;
@@ -7,18 +6,19 @@ interface RatingStarsProps {
 }
 
 const RatingStars = ({ rating, maxRating = 5 }: RatingStarsProps) => {
-  const roundedRating = Math.round(rating * 2) / 2;
-
+  const roundedRating = Math.round(rating);
+  
   return (
-    <div className="flex items-center gap-1">
-      {[...Array(maxRating)].map((_, index) => {
-        if (roundedRating >= index + 0.5) {
-          return <StarSolid key={index} className="h-5 w-5 text-black" />;
-        } else {
-          return <StarOutline key={index} className="h-5 w-5 text-gray-300" />;
-        }
-      })}
-      <span className="text-sm text-gray-600 ml-1">({rating})</span>
+    <div className="flex items-center">
+      <div className="flex">
+        {Array.from({ length: maxRating }, (_, i) => (
+          <StarIcon 
+            key={i}
+            className={`w-5 h-5 ${i < roundedRating ? 'text-black' : 'text-gray-300'}`}
+          />
+        ))}
+      </div>
+      <span className="text-sm text-gray-600 ml-2">({rating})</span>
     </div>
   );
 };

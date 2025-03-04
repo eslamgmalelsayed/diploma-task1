@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Product from "../models/products";
-import Btn from "../ui/btn";
+import Product from "@/models/products";
+import Btn from "@/components/ui/btn";
 import Dialog from "./dialog";
 import RatingStars from "./ratingStars";
 

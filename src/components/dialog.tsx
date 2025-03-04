@@ -1,5 +1,5 @@
 import { XMarkIcon } from "@heroicons/react/24/outline";
-import Product from "../models/products";
+import Product from "@/models/products";
 import ProductForm from "./productForm";
 
 interface DialogProps {

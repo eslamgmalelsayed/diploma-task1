@@ -1,6 +1,6 @@
 import { useState, FormEvent } from "react";
-import Product from "../models/products";
-import { showToast } from "../utils/toast";
+import Product from "@/models/products";
+import { showToast } from "@/utils/toast";
 
 interface ProductFormProps {
   product: Partial<Product>;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import Product from "../models/products";
-import ProductCard from "../components/productCard";
+import Product from "@/models/products";
+import ProductCard from "@/components/productCard";
 function Home() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
